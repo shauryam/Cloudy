@@ -18,10 +18,10 @@ function getWeather(request, response, latitude, longitude, place){
 		        try {
 		          	//Parse the data
 		          	var weatherDetails = JSON.parse(body);
-		          	//Print the data
+		          	//Reading the file Synchronously
 					html = fs.readFileSync('views/weather.html');
 					html = html.toString();
-
+					//Filter only the details we want from the entire JSON we got
 					data = filterJSON(weatherDetails, place);
 					for(var key in data){
 						html = html.replace("[["+ key +"]]", data[key]);

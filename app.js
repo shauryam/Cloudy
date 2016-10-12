@@ -20,7 +20,6 @@ http.createServer(function(request, response){
 		latitude = querystring.parse(urlStr.query).lat;
 		longitude = querystring.parse(urlStr.query).lng;
 		place = querystring.parse(urlStr.query).place;
-		console.log(latitude, longitude, place);
 		router.weatherReport(request, response,latitude, longitude, place);
 	}
 
